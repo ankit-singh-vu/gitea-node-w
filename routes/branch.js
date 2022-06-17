@@ -9,6 +9,7 @@ restClient.on("error", function (err) {
 var variables = require('./variables');
 let { access_token , url } = variables;
 
+//get branch list
 router.get("/:user/:projectName", function (req, res, next) {
 
   let { user , projectName } = req.params;
@@ -31,6 +32,7 @@ router.get("/:user/:projectName", function (req, res, next) {
   });
 });
 
+//repoCreateBranch
 router.post("/:user/:projectName", function (req, res, next) {
   let { user , projectName } = req.params;
   // console.log(req.body);
@@ -56,7 +58,7 @@ router.post("/:user/:projectName", function (req, res, next) {
   });
 });
 
-
+// delete  branch
 router.delete("/:user/:projectName/:branchName", function (req, res, next) {
   // console.log(req.params.user);
   // console.log(req.params.projectName);

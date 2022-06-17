@@ -9,6 +9,7 @@ restClient.on("error", function (err) {
 var variables = require('./variables');
 let { access_token , url } = variables;
 
+// repoListBranches
 router.get("/:user/:projectName", function (req, res, next) {
 
   let { user , projectName } = req.params;
@@ -31,7 +32,7 @@ router.get("/:user/:projectName", function (req, res, next) {
   });
 });
 
-
+// repoCreateFile
 router.post("/:user/:projectName", function (req, res, next) {
   let { user , projectName  } = req.params;
   let { fileName } = req.query;
@@ -53,7 +54,7 @@ router.post("/:user/:projectName", function (req, res, next) {
   });
 });
 
-
+// repoUpdateFile (content should be base64 encoded. sha of file changes after update. new_branch can be used)
 router.put("/:user/:projectName", function (req, res, next) {
   let { user , projectName  } = req.params;
   let { fileName } = req.query;
@@ -76,7 +77,7 @@ router.put("/:user/:projectName", function (req, res, next) {
   });
 });
 
-
+// repoDeleteFile
 router.delete("/:user/:projectName/:branchName", function (req, res, next) {
   let { user , projectName , branchName } = req.params;
   restClient

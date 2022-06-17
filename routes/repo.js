@@ -10,7 +10,7 @@ var variables = require('./variables');
 let { access_token , url } = variables;
 
 
-
+// userListRepos
 router.get("/userListRepos/:user", function (req, res, next) {
   let { user } = req.params;
   // console.log(user);
@@ -32,6 +32,7 @@ router.get("/userListRepos/:user", function (req, res, next) {
   });
 });
 
+// createCurrentUserRepo
 router.post("/", function (req, res, next) {
   // console.log(req.body);
   restClient
@@ -60,7 +61,7 @@ router.post("/", function (req, res, next) {
   });
 });
 
-
+// repoDelete
 router.delete("/:user/:projectName", function (req, res, next) {
   // console.log(req.params.user);
   // console.log(req.params.projectName);

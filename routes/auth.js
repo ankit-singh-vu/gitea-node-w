@@ -29,6 +29,7 @@ router.get("/users", function (req, res, next) {
     });
 });
 
+// create acces_token
 // check in http://localhost:3000/user/settings/applications
 router.post("/", function (req, res, next) {
   var options_auth = { 
@@ -57,7 +58,7 @@ router.post("/", function (req, res, next) {
     console.log("request error", err);
   });
 });
-
+// delete access_token
 // check in http://localhost:3000/user/settings/applications
 router.delete("/:tokenName", function (req, res, next) {
   let { tokenName } = req.params;
